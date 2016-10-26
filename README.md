@@ -1,32 +1,20 @@
-#### Angular Multi-Platform Starter
+# Angular Multi-Platform Starter
 
 Welcome to the Angular Multi-Platform Starter, the best place to get started building apps for the web, for native mobile with [NativeScript](https://www.nativescript.org/), and for desktop with [Electron](http://electron.atom.io/).
 
-This project is based on Nathan Walker's Angular-Advanced-Seed for Angular 2, Electron, and NativeScript apps which in turn is based on [Minko Gechev's](https://github.com/mgechev) [angular2-seed](https://github.com/mgechev/angular2-seed).
+## Prerequisites
 
-#### Integration with:
-- [ngrx/store](https://github.com/ngrx/store) RxJS powered state management, inspired by **Redux**
-- [lodash](https://lodash.com/) Helps reduce blocks of code down to single lines and enhances readability
-- [NativeScript](https://www.nativescript.org/) cross platform mobile (w/ native UI) apps. [Setup instructions here](#nativescript-app).
-- [Electron](http://electron.atom.io/) cross platform desktop apps (Mac, Windows and Linux). [Setup instructions here](#electron-app).
+In order to run the Multi-Platform Starter, you must the following prerequisites in place on your development machine.
 
-### Prerequisites
-
-* node v5.x.x or higher and npm 3 or higher.
-
-* To run the NativeScript app:
-
-```
-npm install -g nativescript
-npm install -g typescript
-```
+* [Node.js 5.x+ and npm 3+](https://nodejs.org/en/)
+* [The TypeScript CLI](https://www.typescriptlang.org/docs/tutorial.html), which you can get by running `npm install -g typpescript`.
+* [The NativeScript CLI and its dependencies](https://docs.nativescript.org/start/quick-setup)
 
 ## Usage
 
-
 ```bash
-git clone --depth 1 https://github.com/jlooper/basic-web-mobile.git
-cd groceries-web-mobile
+git clone https://github.com/jlooper/basic-web-mobile.git myprojectname
+cd myprojectname
 
 # install the project's dependencies
 npm install
