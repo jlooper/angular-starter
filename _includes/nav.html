@@ -1,0 +1,13 @@
+<ul class="docs-nav">
+{% assign posts_list = site.posts | sort:"weight" %}
+{% assign last_cat = "" %}
+{% for posts in posts_list %}
+    {% for category in posts.categories limit:1 %}
+        {% if category != last_cat %}
+    <li><strong>{{ category | replace: "-", " " | capitalize  }}</strong></li>
+        {% endif %}
+    {% assign last_cat = category %}
+    {% endfor %}
+    <li><a href="#{{ posts.slug }}" class="cc-active">{{ posts.title }}</a></li>
+{% endfor %}
+</ul>

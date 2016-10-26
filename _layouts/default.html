@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+<div class="wrapper">
+<nav>
+ 
+  	<div class="pull-left">
+    	<h1><a href="javascript:"><img src="img/icon.png" alt="{{ site.title }}" /> <span>{{ site.title }}</span></a></h1>
+    </div>
+    
+    <div class="pull-right">
+    	<a href="{{ site.download_url }}" target="_blank" class="btn btn-download"><img src="img/download.png" width="25" alt="Download Zip" /> Download Now</a>
+    </div>
+
+</nav>
+<header>
+  <div class="container">
+    <h2 class="lone-header">{{ site.short_description }}</h2>
+  </div>
+</header>
+<section>
+  <div class="container">
+    {% include nav.html %}
+    <div class="docs-content">
+      {% assign posts_list = site.posts | sort:"weight" %}
+      {% for post in posts_list %}
+        {% for category in post.categories limit:1 %}
+          <h2>{{ category | replace: "-", " " | capitalize }}</h2>
+        {% endfor %}
+        <h3 id="{{ post.slug }}">{{ post.title }}</h3>
+
+        {{ post.content }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="vibrant centered">
+  <div class="">
+    <h4>{{ site.description }}</h4>
+  </div>
+</section>
+<footer>
+  <div class="">
+    <p> &copy; Copyright Progress Software. All Rights Reserved.</p>
+  </div>
+</footer>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>
