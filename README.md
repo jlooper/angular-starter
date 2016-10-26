@@ -1,5 +1,7 @@
 #### Angular Multi-Platform Starter
 
+Welcome to the Angular Multi-Platform Starter, the best place to get started building apps for the web, for native mobile with [NativeScript](https://www.nativescript.org/), and for desktop with [Electron](http://electron.atom.io/).
+
 This project is based on Nathan Walker's Angular-Advanced-Seed for Angular 2, Electron, and NativeScript apps which in turn is based on [Minko Gechev's](https://github.com/mgechev) [angular2-seed](https://github.com/mgechev/angular2-seed).
 
 #### Integration with:
