@@ -1,6 +1,6 @@
 # Angular Multi-Platform Starter
 
-Welcome to the Angular Multi-Platform Starter, the best place to get started building apps for the web, for native mobile with [NativeScript](https://www.nativescript.org/), and for desktop with [Electron](http://electron.atom.io/).
+The Angular Multi-Platform Starter is a cloneable template for building apps for the web, for native mobile with [NativeScript](https://www.nativescript.org/), and for desktop with [Electron](http://electron.atom.io/). The template contains a series of npm scripts for running your apps in these environments, as well as a set of conventions for sharing and forking your code for each ecosystem—web, native mobile, and desktop.
 
 * [Prerequisites](#prerequisites)
 * [Getting Started](#getting-started)
@@ -42,7 +42,7 @@ npm install
 
 The Angular Multi-Platform Starter lets you build apps that run on the web, on native mobile platforms, and as native desktop applications. Let’s look at how each of them work.
 
-## Web
+### Web
 
 To test your app out on the web, run the `npm run start` command, which will load your newly created project in a new browser window.
 
@@ -52,49 +52,36 @@ npm run start
 
 The command also sets up a watcher by default, so to see updates to your app all you need to do is save your files.
 
-## NativeScript
+### NativeScript
 
-
-
-```
-iOS:                      npm run start.ios
-iOS (livesync emulator):  npm run start.livesync.ios
-iOS (livesync device):    npm run start.livesync.ios.device
-
-// or...
-
-Android:                      npm run start.android
-Android (livesync emulator):  npm run start.livesync.android
-Android (livesync device):    npm run start.livesync.android.device
-```
-
-* Requires an image setup via AVD Manager. [Learn more here](http://developer.android.com/intl/zh-tw/tools/devices/managing-avds.html) and [here](https://github.com/NativeScript/nativescript-cli#the-commands).
-
-OR...
-
-* [GenyMotion Android Emulator](https://www.genymotion.com/)
-
-## Electron
-
-#### Develop
+The Multi-Platform Starter contains a few npm scripts that perform the necessary actions to run your app on iOS and Android. First, start your app by using either `npm run start.ios`, or `npm run start.android`.
 
 ```
-Mac:      npm run start.desktop
-Windows:  npm run start.desktop.windows
+npm run start.ios
+npm run start.android
 ```
 
-#### Develop with livesync
-```
-Mac:      npm run start.livesync.desktop
-Windows:  npm run start.livesync.desktop.windows
-```
-
-#### Release: Package Electron App for Mac, Windows or Linux
+When your app is running, use the `npm run start.livesync.ios` and `npm run start.livesync.android` commands to set up a watcher, which will watch for changes in your app and apply them to your iOS and/or Android apps.
 
 ```
-Mac:      npm run build.desktop.mac
-Windows:  npm run build.desktop.windows
-Linux:    npm run build.desktop.linux
+npm run start.livesync.ios
+npm run start.livesync.android
+```
+
+### Electron
+
+The Multi-Platform Starter also has support for Electron built in. You can start your app up on Electron using the `npm run start.desktop` command on Macs, and `npm run start.desktop.windows` on Windows.
+
+```
+npm run start.desktop
+npm run start.desktop.windows
+```
+
+With your app running, use the `npm run start.livesync.desktop` (Mac) or `npm run start.livesync.desktop.windows` (Windows) command to set up a file watcher, which will watch for changes and apply them to your desktop application.
+
+```
+npm run start.livesync.desktop
+npm run start.livesync.desktop.windows
 ```
 
 ## Folder Structure
