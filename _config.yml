@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   for the web, for native mobile with NativeScript, and for desktop with Electron.
 short_description: "Build apps for the web, mobile and for desktop with one code base."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://jlooper.github.io/basic-web-mobile/" # the base hostname & protocol for your site
 download_url: "https://github.com/jlooper/basic-web-mobile/archive/master.zip"
 
 # Build settings
