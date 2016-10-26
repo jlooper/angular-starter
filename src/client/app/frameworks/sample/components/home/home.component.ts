@@ -1,11 +1,5 @@
-import {OnInit, Inject} from '@angular/core';
-import {BaseComponent} from '../../../core/decorators/base.component';
-import {LogService} from '../../../core/services/log.service';
-import {FRAME} from '../../../core/tokens';
-import {Config} from '../../../core/utils/config';
-import {Router} from '@angular/router';
-import {SampleService} from '../../../sample/services/sample.service';
-import {SampleModel} from '../../../sample/models/sample.model';
+import { OnInit } from '@angular/core';
+import { BaseComponent } from '../../../core/decorators/base.component';
 
 @BaseComponent({
   moduleId: module.id,
@@ -14,18 +8,26 @@ import {SampleModel} from '../../../sample/models/sample.model';
   styleUrls: ['home.css']
 })
 export class HomeComponent implements OnInit {
-  
-  constructor(public sampleService: SampleService,
-              private logger: LogService,
-              private _router: Router,
-              @Inject(FRAME) private frame: any
-            ) {}
+  private counter: number;
+  private message: string;
 
- ngOnInit() {
-    if (Config.IS_MOBILE_NATIVE()) {
-      if (this.frame.topmost().ios) {
-          this.frame.topmost().ios.controller.visibleViewController.navigationItem.setHidesBackButtonAnimated(true, false);
-      } 
-    } 
+  constructor() {}
+
+  ngOnInit() {
+    this.counter = 42;
+    this.updateMessage();
+  }
+
+  updateCounter() {
+    this.counter--;
+    this.updateMessage();
+  }
+
+  private updateMessage() {
+    if (this.counter <= 0) {
+      this.message = 'Hoorraaay! You unlocked the NativeScript clicker achievement!';
+    } else {
+      this.message = `${this.counter} taps left`;
+    }
   }
 }

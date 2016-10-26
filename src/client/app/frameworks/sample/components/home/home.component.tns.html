@@ -1,3 +1,6 @@
+<ActionBar title="Your App"></ActionBar>
 <StackLayout>
-  <Label text="This is a NativeScript home page" textWrap="true"></Label>
+  <Label text="Tap the button"></Label>
+  <Button text="TAP" (tap)="updateCounter()"></Button>
+  <Label [text]="message" textWrap="true"></Label>
 </StackLayout>

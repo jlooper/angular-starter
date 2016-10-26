@@ -1,1 +1,10 @@
-/*blank for now*/
+Label {
+  font-size: 20;
+  horizontal-align: center;
+  margin: 20;
+  text-align: center;
+}
+Button {
+  font-size: 30;
+  horizontal-align: center;
+}
