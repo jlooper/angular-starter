@@ -1,0 +1,16 @@
+dist/
+
+nativescript/app/app
+nativescript/app/assets
+nativescript/**/*.js
+nativescript/**/*.js.map
+nativescript/hooks/
+nativescript/lib/
+nativescript/platforms/
+
+node_modules/
+
+src/**/*.js
+src/**/*.js.map
+
+typings/
