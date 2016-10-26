@@ -2,6 +2,7 @@ dist/
 
 nativescript/app/app
 nativescript/app/assets
+nativescript/app/css/
 nativescript/**/*.js
 nativescript/**/*.js.map
 nativescript/hooks/
@@ -9,6 +10,8 @@ nativescript/lib/
 nativescript/platforms/
 
 node_modules/
+
+npm-debug.log
 
 src/**/*.js
 src/**/*.js.map
