@@ -24,5 +24,4 @@ download_url: "https://github.com/jlooper/basic-web-mobile/archive/master.zip"
 
 # Build settings
 markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
+highlighter: rouge
