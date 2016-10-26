@@ -22,17 +22,7 @@
 <section>
   <div class="container">
     {% include nav.html %}
-    <div class="docs-content">
-      {% assign posts_list = site.posts | sort:"weight" %}
-      {% for post in posts_list %}
-        {% for category in post.categories limit:1 %}
-          <h2>{{ category | replace: "-", " " | capitalize }}</h2>
-        {% endfor %}
-        <h3 id="{{ post.slug }}">{{ post.title }}</h3>
-
-        {{ post.content }}
-      {% endfor %}
-    </div>
+    {{ content }}
   </div>
 </section>
 <section class="vibrant centered">
