@@ -17,10 +17,10 @@ title: Angular Multi-Platform Starter
 description: > # this means to ignore newlines until "baseurl:"
   The Angular Multi-Platform Starter is the best place to get started building apps
   for the web, for native mobile with NativeScript, and for desktop with Electron.
-short_description: "Build apps for the web, mobile and for desktop with one code base."
+short_description: "Build apps for the web, mobile, and desktop with one code base."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jlooper.github.io/basic-web-mobile/" # the base hostname & protocol for your site
-download_url: "https://github.com/jlooper/basic-web-mobile/archive/master.zip"
+url: "https://jlooper.github.io/angular-starter/" # the base hostname & protocol for your site
+download_url: "https://github.com/jlooper/angular-starter/archive/master.zip"
 
 # Build settings
 markdown: kramdown
