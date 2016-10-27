@@ -3,7 +3,7 @@ layout: null
 title:  "Creating a Project"
 date:   2016-10-25 08:59:23 -0400
 categories: getting-started
-weight: 1
+weight: 3
 ---
 
 Once you have everything set up, start a new project by cloning this repo:

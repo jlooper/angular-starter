@@ -5,14 +5,15 @@ layout: default
 <div class="docs-content">
     {% assign posts_list = site.posts | sort:"weight" %}
     {% for post in posts_list %}
-    {% for category in post.categories limit:1 %}
-        {% if category != last_cat %}
+        {% for category in post.categories limit:1 %}
+            {% if category != last_cat %}
     <h2>{{ category | replace: "-", " " | capitalize }}</h2>
-        {% endif %}
-    {% assign last_cat = category %}
-    {% endfor %}
+            {% endif %}
+            {% assign last_cat = category %}
+        {% endfor %}
+        {% if post.title != "" %}
     <h3 id="{{ post.slug }}">{{ post.title }}</h3>
-
+        {% endif %}
     {{ post.content }}
     {% endfor %}
 </div>

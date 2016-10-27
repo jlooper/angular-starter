@@ -3,7 +3,7 @@ layout: null
 title:  "Prerequisites"
 date:   2016-10-25 08:59:23 -0400
 categories: getting-started
-weight: 1
+weight: 2
 ---
 
 * [Node.js 5.x+ and npm 3+](https://nodejs.org/en/)

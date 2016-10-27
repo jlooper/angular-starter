@@ -3,7 +3,7 @@ layout: null
 title:  "Electron"
 date:   2016-10-25 08:59:23 -0400
 categories: running-your-apps
-weight: 5
+weight: 7
 ---
 
 The Multi-Platform Starter also has support for Electron built in. You can start your app up on Electron using the `npm run start.desktop` command on Macs, and `npm run start.desktop.windows` on Windows.

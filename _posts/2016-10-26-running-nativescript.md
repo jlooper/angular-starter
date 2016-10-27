@@ -3,7 +3,7 @@ layout: null
 title:  "NativeScript"
 date:   2016-10-26 08:59:23 -0400
 categories: running-your-apps
-weight: 4
+weight: 6
 ---
 
 The Multi-Platform Starter contains a few npm scripts that perform the necessary actions to run your app on iOS and Android. First, start your app by using either `npm run start.ios`, or `npm run start.android`.
