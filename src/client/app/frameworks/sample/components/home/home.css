@@ -1,1 +1,7 @@
-/*blank for now*/
+button {
+  background-color: #30BCFF;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  font-size: 1.5em;
+}
