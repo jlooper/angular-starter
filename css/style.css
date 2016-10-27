@@ -183,6 +183,8 @@ h1 {
 header h2 {
     margin: 0 0 1em 0;
     font-weight: 300;
+    font-size: 22px;
+    padding-left: 6px;
 }
 
 header h2.lone-header {
