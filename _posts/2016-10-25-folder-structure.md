@@ -27,7 +27,7 @@ Most of the time you’ll be working in the `src/client` folder, which contains 
 ```
 .
 ├── app
-│   └── frameworks
+│   └── shared
 │       ├── core
 │       │   └── ...
 │       ├── electron
@@ -53,6 +53,6 @@ Most of the time you’ll be working in the `src/client` folder, which contains 
 └── index.html <-- landing page of your web app
 ```
 
-In the structure above, the `sample` folder contains the main code of your application. You can rename this folder to the name of your application if you’d like.
+In the structure above, the `sample` folder contains the main code of your application. You can rename this folder to the name of your application if you’d like or replace it with your own code.
 
 The Angular components defined in the `sample/components` folder are used across all three environments that the Multi-Platform Starter supports—web, native, and Electron. If you’d like to split up your code so that different files execute in different environments you have a few different options; the first of these is a simple file naming convention.
