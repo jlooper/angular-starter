@@ -11,8 +11,7 @@ var path = require('path');
 
 var webAppPath = '../src/client/app';
 var webAssetsPath = '../src/client/assets';
-var nativescriptAppPath = '../nativescript/app/app/';
-var nativescriptAssetsPath = '../nativescript/app/assets/';
+var nativescriptAppPath = '../nativescript/src/app/';
 
 // Root SymLink Code for Windows
 if (process.argv.length > 2) {
@@ -23,7 +22,7 @@ if (process.argv.length > 2) {
     return 0;
 }
 
-    
+
 // console.log("Installing NativeScript support files...");
 // cp.execSync('npm install', {cwd: 'nativescript'});
 
@@ -33,9 +32,6 @@ console.log("Configuring...");
 try {
   if (fs.existsSync(resolve(nativescriptAppPath))) {
     fs.unlinkSync(resolve(nativescriptAppPath));
-  }
-  if (fs.existsSync(resolve(nativescriptAssetsPath))) {
-    fs.unlinkSync(resolve(nativescriptAssetsPath));
   }
 } catch (err) {
 }
@@ -80,7 +76,7 @@ function AttemptRootSymlink() {
           console.log("RootSymlink Base path is", curPath);
       }
       cp.execSync("powershell -Command \"Start-Process 'node' -ArgumentList '"+curPath+"/install.js symlink' -verb runas\"");
-    } else {        
+    } else {
       console.log("To automatically create a SymLink between your web app and NativeScript, we need root for a second.");
       cp.execSync("sudo "+process.argv[0] + " " + process.argv[1] +" symlink");
     }
@@ -99,13 +95,6 @@ function createRootSymLink() {
         console.log("Path: ", p1, p2);
     }
     fs.symlinkSync(p2, p1, 'junction');
-
-    p1 = resolve(AppPath + "/" + nativescriptAssetsPath);
-    p2 = resolve(AppPath + "/" + webAssetsPath);
-    if (debugging) {
-        console.log("Path: ", p1, p2);
-    }
-    fs.symlinkSync(p2,p1,'junction');
 }
 
 /**
@@ -116,8 +105,6 @@ function createSymLink() {
         console.log("Attempting to Symlink", webAppPath, nativescriptAppPath);
     }
     fs.symlinkSync(resolve(webAppPath), resolve(nativescriptAppPath), 'junction');
-    fs.symlinkSync(resolve(webAssetsPath), resolve(nativescriptAssetsPath), 'junction');
-  
 }
 
 /**
@@ -125,7 +112,7 @@ function createSymLink() {
  */
 function displayFinalHelp()
 {
-    console.log("------------------------ Angular 2 Seed Advanced is Now Ready ----------------------------");
+    console.log("------------------------ Angular Seed Advanced is Now Ready ----------------------------");
     console.log("");
     console.log("Run your web app with:");
     console.log("  npm start");

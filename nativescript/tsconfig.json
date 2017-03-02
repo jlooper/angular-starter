@@ -1,15 +1,36 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "target": "es5",
-        "sourceMap": true,
+        "module": "commonjs",
+        "declaration": false,
+        "removeComments": true,
+        "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "lib": [
+            "dom"
+        ],
+        "pretty": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
         "noEmitHelpers": true,
-        "noEmitOnError": true
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noImplicitUseStrict": false,
+        "noFallthroughCasesInSwitch": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules"
+        ],
+        "types": [
+            "jasmine"
+        ]
     },
     "exclude": [
         "node_modules",
-        "platforms"
-    ]
+        "platforms",
+        "src",
+        "**/*.aot.ts"
+    ],
+    "compileOnSave": false
 }

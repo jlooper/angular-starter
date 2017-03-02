@@ -3,6 +3,8 @@
 'use strict';
 
 var argv = require('yargs').argv;
+var minimatch = require("minimatch");
+
 
 module.exports = function (config) {
   config.set({
@@ -20,6 +22,7 @@ module.exports = function (config) {
     files: [
       // Polyfills.
       'node_modules/core-js/client/shim.min.js',
+      'node_modules/intl/dist/Intl.min.js',
 
       'node_modules/traceur/bin/traceur.js',
 
@@ -49,6 +52,8 @@ module.exports = function (config) {
       { pattern: 'node_modules/ng2-translate/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/@ngrx/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/angulartics2/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/ngrx-store-freeze/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/deep-freeze-strict/**/*.js', included: false, watched: false },
 
       { pattern: 'dist/dev/**/*.js', included: false, watched: true },
       { pattern: 'dist/dev/**/*.html', included: false, watched: true, served: true },
@@ -120,7 +125,7 @@ module.exports = function (config) {
 
     // Passing command line arguments to tests
     client: {
-      files: argv.files
+      files:  argv.files ? minimatch.makeRe(argv.files).source : null
     }
   });
 

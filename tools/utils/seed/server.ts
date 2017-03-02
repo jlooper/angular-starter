@@ -2,7 +2,6 @@ import * as express from 'express';
 import * as fallback from 'express-history-api-fallback';
 import * as openResource from 'open';
 import { resolve } from 'path';
-import * as serveStatic from 'serve-static';
 
 import * as codeChangeTool from './code_change_tools';
 import Config from '../../config';
@@ -32,7 +31,7 @@ export function serveDocs() {
 
   server.use(
     Config.APP_BASE,
-    serveStatic(resolve(process.cwd(), Config.DOCS_DEST))
+    express.static(resolve(process.cwd(), Config.DOCS_DEST))
   );
 
   server.listen(Config.DOCS_PORT, () =>
@@ -45,12 +44,10 @@ export function serveDocs() {
  */
 export function serveCoverage() {
   let server = express();
-  let compression = require('compression');
-      server.use(compression());
 
   server.use(
     Config.APP_BASE,
-    serveStatic(resolve(process.cwd(), 'coverage'))
+    express.static(resolve(process.cwd(), Config.COVERAGE_TS_DIR))
   );
 
   server.listen(Config.COVERAGE_PORT, () =>
@@ -64,10 +61,12 @@ export function serveCoverage() {
 export function serveProd() {
   let root = resolve(process.cwd(), Config.PROD_DEST);
   let server = express();
-  let compression = require('compression');
-      server.use(compression());
 
-  server.use(Config.APP_BASE, serveStatic(root));
+  for (let proxy of Config.getProxyMiddleware()) {
+    server.use(proxy);
+  }
+
+  server.use(Config.APP_BASE, express.static(root));
 
   server.use(fallback('index.html', { root }));
 
