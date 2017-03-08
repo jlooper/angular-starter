@@ -15,7 +15,6 @@ export = function watch() {
     `${Config.TNS_APP_SRC}/app/*`,
     `${Config.TNS_APP_SRC}/app/**/*`,
     `!${Config.TNS_APP_SRC}/app/*.component.css`,
-    `!${Config.TNS_APP_SRC}/app/*.component.scss`,
     `!${Config.TNS_APP_SRC}/app/*.component.html`,
   ];
 

@@ -23,7 +23,6 @@ import { routes } from './app/shared/sample/components/app/app.routes';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
-import { AppReducer } from './app/shared/ngrx/index';
 import { ComponentsModule, cons } from './components.module';
 
 // {N} custom app specific
@@ -56,8 +55,7 @@ import { AppConfig } from './app/shared/sample/services/app-config';
       { provide: ConsoleService, useFactory: (cons) },
     ]),
     ComponentsModule,
-    NativeScriptRouterModule.forRoot(<any>routes),
-    StoreModule.provideStore(AppReducer)
+    NativeScriptRouterModule.forRoot(<any>routes)
   ],
   providers: [
     NS_ANALYTICS_PROVIDERS,

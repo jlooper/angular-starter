@@ -6,18 +6,17 @@ import { RouterModule } from '@angular/router';
 import { Http } from '@angular/http';
 
 // libs
-import { StoreModule } from '@ngrx/store';
+/*import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TranslateLoader } from '@ngx-translate/core';*/
 
 // app
-import { TOKENS_WEB } from './tokens.web';
-import { APP_COMPONENTS, AppComponent } from './app/shared/sample/index';
+import { APP_COMPONENTS, AppComponent } from './app/shared/sample/components/index';
 import { routes } from './app/shared/sample/components/app/app.routes';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
-import { AppReducer } from './app/shared/ngrx/index';
 import { SampleModule } from './app/shared/sample/sample.module';
 
 // config
@@ -49,6 +48,14 @@ export function cons() {
   return console;
 }
 
+let DEV_IMPORTS: any[] = [];
+
+if (String('<%= BUILD_TYPE %>') === 'dev') {
+  DEV_IMPORTS = [
+    ...DEV_IMPORTS
+  ];
+}
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -58,8 +65,7 @@ export function cons() {
     ]),
     routerModule,
     SampleModule,
-    StoreModule.provideStore(AppReducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()   
+    DEV_IMPORTS
   ],
   declarations: [
     APP_COMPONENTS,

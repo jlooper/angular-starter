@@ -14,7 +14,7 @@ if (isIOS) {
 
 // libs
 import { Store } from '@ngrx/store';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 
 // app
 import { AppService } from '../../../app/shared/core/services/app.service';
@@ -22,6 +22,7 @@ import { Config } from '../../../app/shared/core/utils';
 import { LogService, WindowService, RouterExtensions } from '../../../app/shared/core/index';
 import { AnalyticsService } from '../../../app/shared/analytics/index';
 import { ActionBarUtil } from '../utils/actionbar.util';
+import * as multilingual from '../../../app/shared/i18n/index';
 
 declare var android: any;
 const trackingId = '<%= TNS_CONFIG.ANALYTICS_TRACKING_ID %>';
@@ -45,6 +46,7 @@ export class NSAppService extends AppService {
 
     this.log.debug('NSAppService constructor');
 
+    store.dispatch(new multilingual.ChangeAction(window.navigator.language.substr(0, 2)));
 
     // translate.onLangChange.skip(1).subscribe((args) => {
     //   this.log.info(`NSAppComponent translate.onLangChange(${args.lang})`);

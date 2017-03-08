@@ -11,7 +11,8 @@ import { Http } from '@angular/http';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 // libs
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // app
 import { AppComponent } from './app/shared/sample/components/app/app.component';
@@ -20,7 +21,6 @@ import { routes } from './app/shared/sample/components/app/app.routes';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
-import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { SampleModule } from './app/shared/sample/sample.module';
 
 // intermediate component module
@@ -32,14 +32,13 @@ import { SampleModule } from './app/shared/sample/sample.module';
     NativeScriptFormsModule,
     NativeScriptHttpModule,
     NativeScriptRouterModule,
-    AnalyticsModule,
     CoreModule,
     SampleModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent  
-    ],
+    HomeComponent
+  ],
   schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA
@@ -50,7 +49,6 @@ import { SampleModule } from './app/shared/sample/sample.module';
     NativeScriptHttpModule,
     NativeScriptRouterModule,
     AppComponent,
-    AnalyticsModule,
     CoreModule,
     SampleModule
   ]

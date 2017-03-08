@@ -12,7 +12,17 @@ let mainWindow: any = null;
 let template: any;
 let menu: any;
 
+// app
+import { DesktopConfig } from './app/shared/electron/index';
 
+// Sample
+// You would need a valid `submitURL` to use
+// crashReporter.start({
+//   productName: 'AngularSeedAdvanced',
+//   companyName: 'NathanWalker',
+//   submitURL: 'https://github.com/NathanWalker/angular-seed-advanced',
+//   autoSubmit: true
+// });
 
 if (process.env.NODE_ENV === 'development') {
   require('electron-debug')();
@@ -41,21 +51,60 @@ app.on('ready', () => {
     console.log(`Page navigated: ${url}`);
   });
 
-  let appTitle: string = `Groceries`;
+  let appTitle: string = `Angular Seed Advanced`;
 
-  
+  let langMenu: any = {
+    label: 'Language',
+    submenu: []
+  };
+  for (var lang of DesktopConfig.SUPPORTED_LANGUAGES) {
+    let code = lang.code;
+    let langOption = {
+      label: lang.title,
+      click:() => {
+        console.log(`Change lang: ${code}`);
+        mainWindow.webContents.executeJavaScript(`window.dispatchEvent(new CustomEvent('changeLang', {detail: { value: '${code}'} }));`);
+      }
+    };
+    langMenu.submenu.push(langOption);
+  }
 
   let helpMenu: any = {
     label: 'Help',
     submenu: [{
       label: 'Learn More',
       click:() => {
-        shell.openExternal('https://github.com/jlooper/basic-web-mobile');
+        shell.openExternal('https://github.com/NathanWalker/angular-seed-advanced');
       }
     }, {
         label: 'Issues',
         click:() => {
-          shell.openExternal('https://github.com/jlooper/basic-web-mobile/issues');
+          shell.openExternal('https://github.com/NathanWalker/angular-seed-advanced/issues');
+        }
+      }, {
+        label: `My Amazing Parent: Minko Gechev's Angular Seed`,
+        click:() => {
+          shell.openExternal('https://github.com/mgechev/angular-seed');
+        }
+      }, {
+        label: 'Angular 2',
+        click:() => {
+          shell.openExternal('https://angular.io/');
+        }
+      }, {
+        label: 'Electron',
+        click:() => {
+          shell.openExternal('http://electron.atom.io/');
+        }
+      }, {
+        label: 'Electron Docs',
+        click: () => {
+          shell.openExternal('https://github.com/atom/electron/tree/master/docs');
+        }
+      }, {
+        label: 'Codeology Visualization',
+        click:() => {
+          shell.openExternal('http://codeology.braintreepayments.com/nathanwalker/angular-seed-advanced');
         }
       }]
   };
@@ -74,7 +123,7 @@ app.on('ready', () => {
         }, {
           type: 'separator'
         }, {
-          label: 'Hide Seed',
+          label: 'Hide Angular Seed Advanced',
           accelerator: 'Command+H',
           selector: 'hide:'
         }, {
@@ -166,6 +215,7 @@ app.on('ready', () => {
             selector: 'arrangeInFront:'
           }]
       },
+      langMenu,
       helpMenu];
 
     menu = Menu.buildFromTemplate(template);
@@ -211,6 +261,7 @@ app.on('ready', () => {
             }
           }]
       },
+      langMenu,
       helpMenu];
     menu = Menu.buildFromTemplate(template);
     mainWindow.setMenu(menu);
