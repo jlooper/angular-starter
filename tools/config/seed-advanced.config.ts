@@ -29,8 +29,6 @@ export class SeedAdvancedConfig extends SeedConfig {
   constructor() {
     super();
 
-    this.ENABLE_SCSS = true;
-
     let arg: string;
     if (argv && argv._) {
       arg = argv._[0];
@@ -73,74 +71,6 @@ export class SeedAdvancedConfig extends SeedConfig {
           main: 'index.js',
           defaultExtension: 'js'
         }
-      },
-      {
-        name: '@ngrx/core',
-        packageMeta: {
-          main: 'bundles/core.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: '@ngrx/store',
-        packageMeta: {
-          main: 'bundles/store.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: '@ngrx/effects',
-        packageMeta: {
-          main: 'bundles/effects.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: '@ngrx/effects/testing',
-        path: `${this.APP_BASE}node_modules/@ngrx/effects/testing/index.js`
-      },
-      {
-        name: '@ngrx/store-devtools',
-        packageMeta: {
-          main: 'bundles/store-devtools.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: '@ngx-translate/core',
-        packageMeta: {
-          main: 'bundles/core.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: '@ngx-translate/http-loader',
-        packageMeta: {
-          main: 'bundles/http-loader.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: 'angulartics2',
-        packageMeta: {
-          main: 'dist/index.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: 'angulartics2/dist/providers',
-        packageMeta: {
-          main: 'index.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: 'ngrx-store-freeze',
-        path: `${this.APP_BASE}node_modules/ngrx-store-freeze/dist/index.js`
-      },
-      {
-        name: 'deep-freeze-strict',
-        path: `${this.APP_BASE}node_modules/deep-freeze-strict/index.js`
       }
     ];
 

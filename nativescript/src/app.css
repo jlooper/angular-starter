@@ -1,0 +1,12 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.link {
+  border-width: 0;
+  background-color: transparent;
+}
+.odd {
+  background-color: #efefef;
+}
+.even {
+  background-color: #fff;
+}

@@ -1,5 +1,5 @@
 // angular
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {Component} from '@angular/core';
 
 // app
 
@@ -7,6 +7,5 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   moduleId: module.id,
   selector: 'sd-app',
   templateUrl: 'app.component.html',
-  changeDetection: ChangeDetectionStrategy.Default // Everything else uses OnPush
 })
 export class AppComponent {}

@@ -7,10 +7,6 @@ import {
 // angular
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
-// libs
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-
 // app
 import {
   WindowService,
@@ -27,7 +23,6 @@ import { ComponentsModule, cons } from './components.module';
 
 // {N} custom app specific
 import { WindowNative, NSAppService } from './mobile/core/index';
-import { NS_ANALYTICS_PROVIDERS } from './mobile/analytics/index';
 
 /**
  * Config
@@ -58,7 +53,6 @@ import { AppConfig } from './app/shared/sample/services/app-config';
     NativeScriptRouterModule.forRoot(<any>routes)
   ],
   providers: [
-    NS_ANALYTICS_PROVIDERS,
     { provide: RouterExtensions, useClass: TNSRouterExtensions },
     { provide: AppService, useClass: NSAppService },
   ],

@@ -1,5 +1,5 @@
 {
-  "name": "angular-seed-advanced",
+  "name": "angular-starter",
   "version": "0.0.0",
   "description": "High-quality, modular starter (advanced seed) project for Angular 2 apps with statically typed build and AoT + NativeScript + Electron",
   "repository": {
@@ -64,13 +64,15 @@
   "contributors": [
     {
       "name": "Nathan Walker <NathanWalker>"
+    },
+    {
+      "name": "Jen Looper <jlooper>"
     }
   ],
   "license": "MIT",
   "devDependencies": {
     "@angular/compiler-cli": "~2.4.0",
     "@angular/platform-server": "~2.4.0",
-    "@ngrx/store-devtools": "^3.2.2",
     "@types/async": "^2.0.32",
     "@types/browser-sync": "^0.0.34",
     "@types/express": "^4.0.33",
@@ -143,7 +145,6 @@
     "merge-stream": "^1.0.0",
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
-    "ngrx-store-freeze": "0.1.6",
     "open": "0.0.5",
     "protractor": "^4.0.14",
     "remap-istanbul": "^0.8.4",
@@ -176,12 +177,6 @@
     "@angular/platform-browser": "~2.4.0",
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/router": "~3.4.1",
-    "@ngrx/core": "^1.2.0",
-    "@ngrx/effects": "^2.0.0",
-    "@ngrx/store": "^2.2.1",
-    "@ngx-translate/core": "^6.0.0",
-    "@ngx-translate/http-loader": "0.0.3",
-    "angulartics2": "^1.6.3",
     "core-js": "^2.4.1",
     "es-module-loader": "^1.0.0",
     "intl": "^1.2.5",

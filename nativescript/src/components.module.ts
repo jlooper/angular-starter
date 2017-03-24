@@ -10,10 +10,6 @@ import { Http } from '@angular/http';
 // angular
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
-// libs
-import { TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 // app
 import { AppComponent } from './app/shared/sample/components/app/app.component';
 import { HomeComponent } from './app/shared/sample/components/home/home.component';
